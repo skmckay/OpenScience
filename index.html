@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Colton Shaw and S. Kyle McKay" />
 
 
 <title>A Guide to Applying Open Science Methods in Ecological Modeling</title>
@@ -350,6 +351,7 @@ display: none;
 
 <h1 class="title toc-ignore">A Guide to Applying Open Science Methods in
 Ecological Modeling</h1>
+<h4 class="author">Colton Shaw and S. Kyle McKay</h4>
 <h4 class="date">March 2024</h4>
 
 </div>
@@ -557,17 +559,427 @@ target audience such as relevant ERDC scientists or USACE project team
 members; presenting and creating technical tools that are fully
 accessible and understandable to all audiences is often infeasible.</p>
 </div>
-<div id="abstract-1" class="section level1">
-<h1><strong>Abstract</strong></h1>
-<p>Transparency and</p>
+<div id="benefits-of-open-science-to-ecological-modeling" class="section level1">
+<h1><strong>Benefits of Open Science to Ecological
+Modeling</strong></h1>
+<p>Open science approaches add value to USACE ecological modeling
+activities through benefiting different participants in the ecological
+modeling process, identifying and applying applicable leverage points
+for open science, and increasing availability and accessibility to
+enhance communication and sharing of ecological model outcomes.</p>
+<div id="reaching-the-target-audience" class="section level2">
+<h2><em>Reaching the Target Audience</em></h2>
+<p>Open Work forces model development teams to consider which target
+audience are important to reach (i.e., who is the audience that should
+have access). Some roles associated with ecological model development
+may be described as follows:</p>
+<ul>
+<li><em>Model developers</em> are those conceptualizing and programming
+numerical tools for USACE applications. Developers benefit from open
+science by having their models become more accessible and thereby
+increasing the likelihood of adoption. More importantly, developers can
+benefit from the input of others on model structure, incorporate
+different bodies of knowledge, and provide tools that better meet user
+needs (i.e., through co-development and participatory processes, Herman
+et al. 2019).<br />
+</li>
+<li><em>Model users</em> are those applying numerical models to inform
+decisions, which sometimes are synonymous with developers, but may be a
+separate group applying the tools but not involved with development.
+Model users need details about model theory, assumptions, and use to
+avoid misapplication of models in decision processes.<br />
+</li>
+<li><em>Technical professionals</em> use model outcomes to make informed
+decisions but are rarely involved in numerical analyses. These audiences
+include those within the USACE making choices about project alternatives
+(e.g., project managers or District Commanders), as well as external
+audiences providing regulatory input. This audience needs to understand
+tool development, model outcomes, and assumption and limitations of
+tools; all of which affect their trust in the models, buy-in to the
+tools, and appropriate interpretation of results.<br />
+</li>
+<li><em>Stakeholders</em>, for the purpose of this paper, encompass a
+wide variety of groups with varying levels of interest in model results,
+which can include funding entities, academics, non-profit partners, and
+the general public. This diverse group typically is most interested in
+models as they relate to a particular project or geography, rather than
+the technical tools themselves. Deep technical understanding may not be
+necessary for this group. Rather this group is concerned with the
+ability to easily convey model purposes, grasp concepts, and trust that
+appropriate processes were followed.</li>
+</ul>
 </div>
-<div id="abstract-2" class="section level1">
-<h1><strong>Abstract</strong></h1>
-<p>Transparency and</p>
+<div id="increasing-transparency-in-model-development" class="section level2">
+<h2><em>Increasing Transparency in Model Development</em></h2>
+<p>Ecological model development typically proceeds through a series of
+five general steps of conceptualization, quantification, evaluation,
+application, and communication (Grant and Swannack 2008, Swannack et
+al. 2012, McKay et al. 2019). Collaborative and participatory models
+have been highlighted as mechanisms for increasing the transparency of
+each of these modeling phases (Langsdale et al. 2013, Herman et
+al. 2019). Here, we briefly outline key opportunities for developers to
+apply open science methods aligned with each modeling phase (Table
+2).</p>
+<table>
+<caption>Table 2. Entry points for open science in each phase of
+ecological model development.</caption>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Modeling Phase</th>
+<th align="center">Entry Points for Open Science</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Conceptualization</td>
+<td align="center">Input from diverse technical professionals and
+stakeholders that guides conceptual models. Development of multiple
+conceptual models to guide competing or complementary ecological models.
+Transparent documentation of a conceptual model that guides numerical
+tools development but that is more accessible than modeling code.</td>
+</tr>
+<tr class="even">
+<td align="center">Quantification</td>
+<td align="center">Flexibility in selection of modeling software or
+programming language to maximize accessibility by key audiences.
+Integrated download of input data with the model. Free access for code
+repository. Version controlled systems allowing for collaboration.</td>
+</tr>
+<tr class="odd">
+<td align="center">Evaluation</td>
+<td align="center">Clear, identifiable methods available through
+documentation. Well commented code to guide users through model
+mechanics. Transparent model testing procedures and/or publication of
+testing outcomes (McKay et al. 2022).</td>
+</tr>
+<tr class="even">
+<td align="center">Application</td>
+<td align="center">Data sharing of input and output. Data storage in
+transferrable formats with appropriate archival. Clear identification of
+model versioning and/or application history (e.g., model user, run
+dates, etc.).</td>
+</tr>
+<tr class="odd">
+<td align="center">Communication</td>
+<td align="center">Publishing of easily identifiable contact information
+. Post-processing of outcomes for synthesis by other audiences.
+Carefully crafted figures for data visualization (McKay 2019).</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="abstract-3" class="section level1">
-<h1><strong>Abstract</strong></h1>
-<p>Transparency and</p>
+<div id="making-models-more-available-and-accessible" class="section level2">
+<h2><em>Making Models More Available and Accessible</em></h2>
+<p>Open science methods provide a suite of techniques for overcoming
+common communication challenges, such as the perception that models are
+“black boxes”, an obscure knowledge of model internal workings (Herman
+et al. 2019). Specifically, an Open Work approach emphasizes the
+importance of both availability and accessibility of models and model
+outcomes.</p>
+<p>Open science advocates often focus on barriers to accessibility.
+Model availability is related to the capacity to obtain modeling
+resources, such as input data, model code, testing outputs, reports, or
+journal papers. For instance, data and model code should be posted in
+publicly available and durably archived repositories for long term use
+(Powers and Hampton 2019). A second common issue hindering availability
+relates to costs for obtaining model resources or documentation (e.g.,
+subscription requirements or download fees), which can be overcome
+through open access publication, sharing through public research
+networks (e.g., <a href="https://datadryad.org/stash">data dryad</a>),
+release through institutional libraries (e.g., the <a href="https://erdc-library.erdc.dren.mil/jspui/">ERDC Knowledge
+Core</a>), or posting on public websites (e.g., USACE District sites
+sharing feasibility studies).</p>
+<p>Availability of model resources may, however, be insufficient to
+overcome the opaqueness of the mechanics and assumptions involved with
+ecological model computation. Therefore, the second component of
+effective model communication is the accessibility of model resources
+for different audiences. Accessibility may be hindered by several
+factors: the expertise of developers vs. users (e.g., familiarity with a
+coding language), whether input or output data is in an open format
+(e.g., proprietary vs. standard data format), or language requirements
+of a publication outlet (e.g., journals in English, Spanish, or
+Mandarin). Accessibility issues can be overcome through thoughtful
+development approaches such as the development of a “point and click”
+application for users unfamiliar with coding (see details discussion
+below). Although universal access may be difficult to attain, modelers
+should try to ensure that audiences with appropriate technical expertise
+have access to ecological modeling products. (e.g., Table 1).</p>
+</div>
+</div>
+<div id="open-work-tools-for-ecological-modeling" class="section level1">
+<h1><strong>Open Work Tools for Ecological Modeling</strong></h1>
+<p>Here, we explore tools that facilitate open science in ecological
+modeling. These tools are categorized by purpose and usefulness with
+respect to implementation throughout the project pipeline. This section
+is a starting point for incorporating Open Work methods into modeling
+workflows.</p>
+<div id="idea-sharing" class="section level2">
+<h2><em>Idea Sharing</em></h2>
+<p>Open Work emphasizes the importance of transparency in scientific
+process, and ecological modeling is commonly cited as having challenges
+associated with opaque development processes or the underlying structure
+of models (Herman et al. 2019). A growing family of methods are emerging
+for increasing the transparency of ecological models, some of which
+include:</p>
+<ul>
+<li><em>Conceptual models</em>: The ecological modeling community values
+the use of conceptual models, both as a means to tool development and
+for increasing transparency (Swannack et al. 2012). Conceptual models
+describe the functional interrelationships of ecosystem components
+(Fischenich 2008) and provide a mechanism for model developers to
+communicate with users, technical professionals, and stakeholders about
+the underlying model mechanics. These “mental pictures” vary in detail
+and breadth based on the system of interest and the associated model. An
+effective conceptual model can convey ideas clearly, thereby increasing
+transparency.<br />
+</li>
+<li><em>Participatory Workshops</em>: A range of participatory methods
+have been used to engage multiple audiences in the development of
+ecological models (van den Belt 2004, Voinov and Bousquet 2010, Herman
+et al. 2019). Often these methods rely on workshops where developers,
+users, and technical professionals co-produce conceptual models of an
+ecosystem and discuss the general framework for numerical modeling. This
+approach allows for a wide breadth of participants to be empowered
+through hands-on, interactive model development within the workshop
+structure. These methods reduce barriers to entry on modeling and
+encourage better communication and trust among partners.<br />
+</li>
+<li><em>Facilitation tools</em>: These tools are used to share, develop,
+and organize ideas among developers and other audiences. While some
+set-ups may struggle to facilitate multiple, simultaneous interactions,
+there are methods to enable larger groups to share ideas in a virtual or
+hybrid setting. Examples include Miro, Poll Everywhere, and Menti.</li>
+</ul>
+</div>
+<div id="data-sharing" class="section level2">
+<h2><em>Data Sharing</em></h2>
+<p>In many scientific or research contexts, data sharing is a major
+focus of open science initiatives. In general, data sharing refers to
+the set of techniques for bundling data and metadata, and archiving them
+in private or public repositories (Michener 2015). In the context of
+ecological modeling, data sharing can include the archival of both input
+and/or output data. Making data accessible allows for increased
+transparency for model users, as well as increasing accessibility for
+those using the data outside of the given model application.
+Confidentiality and data ownership are primary concerns that must be
+considered with respect to data sharing (e.g., security issues, Tribal
+data sovereignty). Therefore, the platforms used for data archival often
+vary depending on these concerns, intended audiences, and funding source
+stipulations. For instance, sensitive project data could be shared
+internally via a USACE server or shared drive, whereas publicly
+available information could be posted to a website, scientific
+repository, or submitted to a growing number of journals devoted to data
+sharing (e.g., Nature Scientific Data, Data in Brief).</p>
+</div>
+<div id="open-license-tools" class="section level2">
+<h2><em>Open License Tools</em></h2>
+<p>As mentioned, Open Licensing is one of three primary pillars in the
+Open Work philosophy. This approach manifests in two primary formats for
+ecological modeling: use of open license tools and development of open
+license ecological models.</p>
+<p>Ecological models can be developed in many platforms, ranging from
+spreadsheets and statistical software, to coding languages and
+proprietary software. Tools may be selected on this spectrum to maximize
+accessibility for different audiences. On one end of the spectrum, a
+variety of free and open-source software (FOSS) exists for model
+building, such as the <a href="https://www.python.org/">Python</a> or <a href="https://cran.r-project.org/">R</a> programming languages. However,
+these coding languages may not be the standard tools in an area of
+practice, and accessibility could (paradoxically) be increased through
+closed-source software or proprietary ecological modeling platforms.
+Notably, many FOSS have large user communities that build additional
+utilities and provide large scale technical support in online forums
+(e.g., <a href="https://stackoverflow.com/">Stack Overflow</a>). For
+instance, Markdown is an incredibly versatile, free, and customizable
+text-to-HTML tool (i.e., a markup language) that allows users to
+construct models and document them in the same environment, as well as
+export to common formats like webpages, PDFs, or Microsoft Word
+documents. Similarly, <a href="https://jupyter.org/">Jupyter</a> (and
+online JupyterHub) is a platform that acts as a text editor, compiler,
+and repository, allowing users to choose file formats depending on the
+coding language of choice (e.g. C++, Python, R). These open license
+tools provide a readily transferable mechanism for code sharing, with
+low barriers to entry with respect to software purchase or costly
+training programs.</p>
+<p>In addition to the astute selection of tools for use during model
+development, the ecological model decision making process should address
+the issue of licensing and shareability. For instance, an ecological
+model could be licensed in a restrictive format to minimize potential
+adaptation or misuse due to a nuanced aspect of the code. Conversely, a
+model could be licensed minimally to protect the developer against
+liability. Table 3 provides an abbreviated overview of open licensing
+options, although <a href="https://choosealicense.com/licenses/">developers should explore
+more extensive options as appropriate for their context</a>.</p>
+<table>
+<caption>Table 3. Overview of common code licenses as they pertain to
+ecological modeling.</caption>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Common Code Licenses</th>
+<th align="center">General Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Viral</td>
+<td align="center">Rules out any claims of warranty</td>
+</tr>
+<tr class="even">
+<td align="center">Copyleft</td>
+<td align="center">When modifying and sharing work, developers must
+provide attribution. The most common viral Open Source licenses.
+Protects against liability. (GPL, AGPL, LGPL)</td>
+</tr>
+<tr class="odd">
+<td align="center">Permissive</td>
+<td align="center">Not viral but still offers attribution and protection
+against liability. Possibility for more detailed patents and trademark
+rules. (MIT, BSD, Apache)</td>
+</tr>
+<tr class="even">
+<td align="center">Creative Commons</td>
+<td align="center">The “a la carte” of licensing. Can choose base
+license which rules out warranty and then attach modules as wanted such
+as: BY (requires the author to be stated), SA (any derivatives must be
+“shared alike”, i.e., virality), NC (commercial use forbidden), ND
+(derivatives are forbidden, i.e., not open source)</td>
+</tr>
+<tr class="odd">
+<td align="center">Public Domain/CC0/License</td>
+<td align="center">Forfeit all copyright claims. No warranty
+waiver.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="code-sharing-and-version-control" class="section level2">
+<h2><em>Code Sharing and Version Control</em></h2>
+<p>Thus far, open science tools have been discussed relative to model
+developers communicating with other audiences. However, model developers
+often need open science methods to communicate with each other during
+model development. Two major techniques that developers use in this
+regard are packaging of code into specialized libraries and version
+control software that facilitates development and archival.</p>
+<p>Generally speaking, a package can be thought of as a fundamental unit
+of code that can include functions, data, documentation, and tests
+(Wickham and Bryan 2019). Packages provide an efficient, transportable,
+and reproducible mechanism for code sharing and publication. For
+instance, the R Statistical Software has <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">over
+19,000 user-developed packages</a> with functionality ranging from
+statistical methods to river engineering tools. For many ecological
+models, code could either be developed as a package or for use as a
+function within an existing package from repositories.</p>
+<p>Version control is crucial in any coding environment, especially for
+collaborative coding projects. When co-developing code, a myriad of
+issues may arise within the development period. For example, while two
+developers are working on two separate but related sections of code,
+each set of code will, with any edit, diverge. These two branches of
+code will need to be merged, which can take significant time to sort out
+“by hand”. In some cases, the new codes could conflict with each other,
+rendering one or both of each branch of code unusable. To aid in this
+process of synergizing parallel code development, online repositories
+facilitate version control capabilities such as branching and merging.
+<a href="https://github.com/">GitHub</a> is one of the most widely used
+all-purpose cloud-based repositories, which utilizes Git as the
+versioning language. GitHub can also be used as a public or private
+online repository strictly, without the versioning functions. Existing
+Git structures such as ERDC GitLabs, both private and public, provide an
+established alternative to model and code sharing within ERDC.</p>
+<table>
+<caption>Table 4. Benefits of version control software (e.g., GitHub)
+for ecological model audiences.</caption>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Participant</th>
+<th align="center">Functionality Facilitated by GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Model Developers</td>
+<td align="center">Store unpublished projects during development. Use
+GitHub as a platform with built-in functionality for user comments,
+forums, and wikis. Work synchronously via the GitHub remote repository.
+Version control using multiple access methods. Integrated licensing
+capabilities.</td>
+</tr>
+<tr class="even">
+<td align="center">Model Users</td>
+<td align="center">Easily download all files and compress file(s) into a
+directory. Download files from a public repository without creating an
+account. Access to documentation (user guides).</td>
+</tr>
+<tr class="odd">
+<td align="center">Technical Professionals</td>
+<td align="center">View detailed updates of the remote repository to
+easily view changes. Access to documentation (technical documents and
+testing files).</td>
+</tr>
+<tr class="even">
+<td align="center">Stakeholders</td>
+<td align="center">Publish Wiki updates. View interactions/traffic on
+public repository.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="technology-transfer-to-other-modeling-participants" class="section level2">
+<h2><em>Technology Transfer to Other Modeling Participants</em></h2>
+<p>As discussed, the availability and accessibility of ecological models
+are not synonymous. The methods described above can increase model
+availability, but often developers need to consider a different set of
+methods to make tools more accessible to diverse audiences. Web
+Applications can facilitate model use without handling code, and
+technical professionals and model users alike can save time and effort
+when accessing models through a graphical user interface (GUI). A
+variety of open source tools can help with GUI development. For example,
+the Shiny package in R provides a means for developing interactive web
+apps with little to no HTML experience. In addition to the models
+themselves, input and output data can be visualized in many ways to help
+“tell the story” of modeling (McKay 2019). Similarly, data can be
+processed into an ArcGIS storymap to convey key messages to broader
+audiences. These final technology transfer steps often have some of the
+largest, positive effect on model communication.</p>
+</div>
+</div>
+<div id="summary" class="section level1">
+<h1><strong>Summary</strong></h1>
+<p>USACE ecological modeling best practices could be improved through
+expanded use of Open Science. The beneficiaries would include other
+USACE practitioners, external agencies and partners, and community
+stakeholders. The diverse array of Open Science tools and methods allows
+model developers to tailor approaches to their project needs. The trend
+of virtual work and collaboration has spurred the need for new, better
+organized methods of idea sharing and virtual project hygiene, making
+Open Science a topical subject. However, Open Science is not without its
+challenges, and time and resources may be required to learn new
+techniques or update to new platforms. Adopting the Open Science
+principles could significantly increase inter- and intra- agency
+communication, modeling capabilities and shared expertise. These
+cross-cutting efforts will ultimately result in a reduction of costs and
+an improvement in model effectiveness, as developers learn from each
+other. Open Science therefore provides an effective method to develop
+tools and platforms for use by USACE users and decision makers.</p>
+</div>
+<div id="acknowledgements" class="section level1">
+<h1><strong>Acknowledgements</strong></h1>
+<p>Reviews by Drs. Candice Hall and Todd Steissberg significantly
+improved a prior draft of these ideas. The use of products does not
+represent an endorsement of these products by either the authors or any
+other entity. Please cite this resource as:</p>
+<p>Shaw C. and McKay S.K. 2024. A Guide to Applying Open Science Methods
+in Ecological Modeling. <a href="https://skmckay.github.io/OpenScience/" class="uri">https://skmckay.github.io/OpenScience/</a>.</p>
 </div>
 <div id="references-cited" class="section level1">
 <h1><strong>References Cited</strong></h1>
