@@ -1,105 +1,97 @@
 ---
-title: 'Middle Oconee Resources'
-date: "October 2025"
+title: 'A Guide to Applying Open Science Methods in Ecological Modeling'
+date: "March 2024"
 output: html_document
 ---
 
-# **What is this site?**
+**<span style='color:red;'>Author Note</span>**:
+This report was prepared by the authors as part of a series of projects related to ecological modeling in the US Army Corps of Engineers. However, this document represents only the opinions of the authors and not the USACE or any other organization. The document is shared in the spirit of open science and not as a product of any agency activities.
 
-::: columns
-::: {.column width="40%"}
-The Middle Oconee is a beautiful mid-sized river near Athens, Georgia. The river has been the subject of many scientific studies for a variety of reasons. Multiple communities withdraw water from the river, and it is an important location for community recreation. The watershed size and hydrology are such that the river can feasibility be studied using common scientific methods for wadeable rivers. The University of Georgia is just a few miles away, and the river has been a convenient ecological system for asking a variety of research questions. Collectively, these factors put the river in a "Sweet spot" of being complex enough from a socio-ecological lens, but manageable enough relative to the logistics of conducting river investigations. This website compiles published scientific studies and data sets collected on this unique and important river. The goal is to create a repository of knowledge developed in this system for future researchers.  
-:::
 
-::: {.column width="60%"}
+# **Abstract**
+
+Transparency and accessibility are key parts of maintaining the integrity of reproducible science. Open Work is a philosophical approach for increasing the repeatability, quality, and shareability of a project, which is generally characterized by components of license, access, and format. Open science operationalizes Open Work by embracing best practices in the context of research and science-informed decision-making. Although some practices have been adopted, many aspects of Open Work and open science remain underutilized in ecosystem restoration. Within the realm of ecological modeling, open science practices can be used to streamline model development; benefiting model developers, model users, and other technical stakeholders. The goals of this paper are to: (1) describe the foundations of open science and its importance to USACE, (2) direct readers to resources for learning open science methods, and (3) demonstrate the value of open science methods in the context of USACE ecological modeling. Open science practices have the potential to improve the quality of USACE studies by increasing transparency, accessibility, and reproducibility, ultimately saving time and resources. 
+
+# **Introduction**
+
+Broadly speaking, ecological models “represent a system for the purposes of reproducing, simplifying, analyzing, or understanding it” (EC-1105-2-412). More practically, ecological models are conceptual and numerical tools used to predict ecological benefits and impacts of management actions. Models are developed through a five-step process of conceptualization, quantification, evaluation, application, and communication (Grant and Swannack 2008, Swannack et al. 2012, McKay et al. 2019). Transparent development allows for ecological models to be effectively integrated into management applications and embraced by stakeholders (van den Belt 2004, Swannack et al. 2012, Herman et al. 2019).
+
+Transparency, replicability, and openness have emerged as fundamental issues across all aspects of ecological science, which can be redressed by sharing underlying data or removing access fees of publicly funded science (Powers and Hampton 2019). For instance, a White House task force was formed in May 2021 to “address short-term, high-priority actions to strengthen integrity and also lay [sic] the groundwork for longer-term coordination of Federal agency scientific efforts.” ([Scientific Integrity Task Force | The White House](https://www.whitehouse.gov/ostp/nstc/scientific-integrity-task-force/)). The concepts of openness and transparency are proposed in this report as an enabler of scientific integrity with a specific emphasis on “open science” policies and practices. 
+
+Open Science practices may prove to be beneficial in the context of USACE project planning, decision-making and ecological modeling. Although the lexicon of open science may be new, the concepts build from long-term federal initiatives focused on upholding scientific integrity and increasing transparency in agency practices and decisions ([Holdren 2010](https://obamawhitehouse.archives.gov/administration/eop/ostp/library/scientificintegrity)). The objectives of this technical note are to: (1) describe the foundations of open science and its importance to ecological modeling, (2) direct readers to resources for learning open science methods, and (3) demonstrate the value of open science methods in the context of USACE ecosystem restoration planning.
+
+# **What is Open Science?**
+
+Open Science is characterized by transparent data collection processes, products, code, and metadata (Powers and Hampton 2019). The Center for Open Science has laid out goals of open science regarding the relevant parties involved throughout the collaborative research pipeline: scholarly service providers, institutions, funders, researchers, reviewers, librarians, and consumers. [Open Work is defined by the Open Knowledge and the Open Definition Advisory Council as a set of three key principles](https://opendefinition.org/od/2.1/en/) (taken verbatim):  
+
+- Open License: The work must be available under an open license: freedom to use, build on, modify, and share.  
+- Open Access: The work shall be available at no more than a reasonable one-time reproduction cost, preferably downloadable via the Internet without charge.  
+- Open Format: The work must be provided in a convenient and modifiable form such that there are no unnecessary technological obstacles to the performance of the licensed rights. Specifically, data should be machine-readable, available in bulk, and provided in an open format or, at the very least, can be processed with at least one free/libre/open-source software tool.
+
+	Open science is the set of policies, practices, and methods for delivering the three principles of Open Work. Open science exists on a continuum and can be adopted through a variety of practices tailored to a given application (Table 1). Every project and organization will have different levels of open science which they are trying to achieve, given a set of constraints such as time, resources, breadth of audience, available expertise, and security needs.
+
 ```{r echo=FALSE}
-knitr::include_graphics("MiddleOconee.jpg")
+#Create empty table
+Table01 <- as.data.frame(matrix(NA, nrow = 5, ncol = 4))
+colnames(Table01) <- c("Hypothetical Scenario", "Open License", "Open Access", "Open Format")
+
+#Specify rows of the table
+Table01[1,] <- c("A USACE planning study is applying collaborative model development methods with a set of technical stakeholders to inform agency decision-making on a large, regional ecosystem restoration project. ", "High Degree of Open Licensing. The model can be used by anyone. Avoid forfeiting all copyright claims; attribution, virality, and liability were chosen with the model use and Authors’ discretion in mind.", "High Degree of Open Access. All model resources & data are readily available. Users may download model code, webapps, and documentation at no cost through online repositories (e.g., the ERDC Knowledge Core), . Model code development through shared repositories (e.g., GitHub).", "High Degree of Open Format. Documents are filed concisely with consistent and identifiable naming conventions. All documents and code follow widely accepted style guides, as applicable. All dependencies are free. ")
+Table01[2,] <- c("A USACE planning study is developing a rapidly applicable ecological model to inform a small-scale restoration project through the Continuing Authorities Program.", "High Degree of Open Licensing. The model can be used by anyone. Avoid forfeiting all copyright claims; attribution, virality, and liability were chosen with the model use and Authors’ discretion in mind.", "Medium Degree of Open Access. Most model resources are readily available. Users may download model code at no cost through online repositories and GitHub. Model code development through GitHub.", "Medium Degree of Open Format. Documents are filed concisely with consistent and identifiable naming conventions. All documents and code follow community style guides. Some products require paid subscriptions, free through most institutions.")
+Table01[3,] <- c("The USACE is collecting long-term ecological monitoring data at a series of sites supporting a major, regional ecosystem restoration initiative. ", "High Degree of Open Licensing. Licensing will be dependent on the repository or publisher of choice. ", "Medium Degree of Open Access. Most model resources are readily available. Users may download dataset through online repositories. No GitHub due to publishing conflict.", "Medium Degree of Open Format. Data and metadata are machine readable and curated. Can download as multiple file types.")
+Table01[4,] <- c("A military installation is developing a set of ecological models to inform endangered species management.", "High Degree of Open Licensing. The study may contain sensitive information. Refer to the Technology Transfer Office. Follow guidelines for Controlled Unclassified Information (CUI).", "Medium Degree of Open Access. Some model resources are openly available, but most have restricted access. Model resources are stored on secure servers and locally as CUI.", "Medium Degree of Open Format. CUI documents are strictly formatted and labeled. The style and conventions of non-CUI are tailored to a handful of individuals who have access to the suite.")
+Table01[5,] <- c("A USACE planning study is assessing the environmental impacts associated with navigation actions at a sensitive port facility.", "High Degree of Open Licensing. The study may contain sensitive information. Refer to the Technology Transfer Office. Follow CUI guidelines.", "Medium Degree of Open Access. No detailed model documents are available on the internet to avoid release of sensitive information. ", "Medium Degree of Open Format. Supporting documents follow strict guidelines, however, the model code is not well commented. ")
+
+#Send output table rows into a single matrix
+rownames(Table01) <- NULL
+knitr::kable(Table01, caption="Table 1. Hypothetical examples of open science practices to achieve the goals of Open Work.", align="c") 
 ```
-:::
-:::
 
-**<span style='color:red;'>Copyright Notice</span>**:
-Some of the documents listed are available for downloading. They are provided as a means to ensure timely dissemination of scholarly and technical work on a noncommercial basis. Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that they have offered their works here electronically. It is understood that all persons copying this information will adhere to the terms and constraints invoked by each author’s copyright. These works may not be re-posted without the explicit permission of the copyright holder.
+Implementation of open science requires commitment and resources that in turn pay dividends in the long term (e.g., for long duration projects, for multiple projects in series, or for the broader body of knowledge). Tools and methods used to practice open science vary depending on the scaling and specific project needs, and open science may be inappropriate in some instances (e.g., national defense, intellectual property). Accessibility in the framework of open science does not mean accessibility to everyone, rather, it is focused on a target audience such as relevant ERDC scientists or USACE project team members; presenting and creating technical tools that are fully accessible and understandable to all audiences is often infeasible.
 
-# **Scientific Literature**
+# **Abstract**
 
-Ahmed E.A. 2019. Resilience of the Middle Oconee River to anthropomorphic watershed impacts and precipitation extremes. Master’s Thesis.  University of Georgia. [pdf](https://openscholar.uga.edu/record/20731?ln=en&v=pdf)
-
-Barnes H.H.  1967.  Roughness characteristics of natural channels.  Water Supply Paper 1849.  U.S. Geological Survey, Denver, Colorado. [pdf](https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849_h.pdf)
-
-Bhattacharjee N.V., Willis J., Tollner E.W., and McKay S.K. 2019. Habitat provision under alternative environmental flow regimes. ERDC TN-EMRRP-SR-85. U.S. Army Engineer Research and Development Center, Vicksburg, Mississippi. [pdf](https://apps.dtic.mil/sti/pdfs/AD1069271.pdf)
-
-Campana P., Knox J., Grundstein A., and Dowd J.  2012.  The 2007-2009 drought in Athens, Georgia, United States: A climatological analysis and an assessment of future water availability.  Journal of the American Water Resources Association, 48 (2), 379-390. [link](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1752-1688.2011.00619.x)
-
-Carter R.F. and Putnam S.A. 1978. Low flow frequency of Georgia streams.  Water-Resources Investigations Report 77-127.  U.S. Geological Survey. [pdf](https://pubs.usgs.gov/of/1977/ofr77-127/pdf/ofr77-127.pdf)
-
-Cho, S., Hiott, L.M., Barrett, J.B., McMillan, E.A., House, S.L., Humayoun, S.B., Adams, E.S., Jackson, C.R. and Frye, J.G., 2018. Prevalence and characterization of Escherichia coli isolated from the Upper Oconee Watershed in Northeast Georgia. PloS one, 13(5), p.e0197005. [pdf](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0197005&type=printable)
-
-Evans J.W. and England R.H.  1995.  A recommended method to protect instream flows in Georgia.  Wildlife Resources Division, Georgia Department of Natural Resources. 
-
-Fields L. 2018. The practicality of metabolic modeling to predict ecosystem properties in the middle Oconee river. Master’s Thesis.  University of Georgia. [pdf](https://openscholar.uga.edu/record/9313?ln=en&v=pdf)
- 
-Fisher D.S., Steiner J.L., Endale D.M., Stuedemann J.A., Schomber H.H., Franzluebbers A.J., and Wilkinson S.R.  2000.  The relationship of land use practices to surface water quality in the Upper Oconee Watershed of Georgia.  Forest Ecology and Management, 128, 39-48. [link](https://www.sciencedirect.com/science/article/abs/pii/S0378112799002704)
-
-Freeman M.C. and Marcinek P.A.  2006.  Fish assemblage responses to water withdrawals and water supply reservoirs in Piedmont streams.  Environmental Management, 38 (3), 435-450. [link](https://link.springer.com/article/10.1007/s00267-005-0169-3)
-
-Georgia Department of Natural Resources (GA DNR).  2001.  Interim instream flow protection strategy.  Appendix B of the Water Issues White Paper.  www.gaepd.org/. [pdf](https://epd.georgia.gov/sites/epd.georgia.gov/files/related_files/site_page/GADNR_InterimInstreamFlowProtectionStrategy_2001.pdf)
-
-Georgia Water Plan (GAWP).  2011.  Upper Oconee: Regional water plan.  September 2011.  Georgia Department of Natural Resources, Atlanta, Georgia.  
-
-Grubaugh J.W.  1994.  Influences of elevation, stream size, and land use on structure, function, and production of benthic macroinvertebrate communities in two southern river ecosystems.  Doctoral Dissertation.  University of Georgia.
-
-Grubaugh J.W. and Wallace J.B.  1995.  Functional structure and production of the benthic community in a Piedmont river: 1956-1957 and 1991-1992.  Limnology and Oceanography, 40 (3), 490-501. [pdf](https://www.ephemeroptera-galactica.com/pubs/pub_g/pubgrubaughj1995p490.pdf)
-
-Ignatius, A.R. and Rasmussen, T.C., 2016. Small reservoir effects on headwater water quality in the rural-urban fringe, Georgia Piedmont, USA. Journal of Hydrology: Regional Studies, 8, pp.145-161. [pdf](https://www.sciencedirect.com/science/article/am/pii/S2214581816300519)
-
-Katz R.A.  2009.  Abundance and survival of common benthic biota in a river affected by water diversion during an historic drought.  Master’s Thesis.  University of Georgia. [pdf](https://openscholar.uga.edu/record/9042?ln=en&v=pdf)
-
-Katz R.A.  2014.  Evaluating the relations between fish population dynamics, streamflow, and geomorphic characteristics at multiple spatial scales.  Doctoral Dissertation.  University of Georgia. [pdf](https://openscholar.uga.edu/record/9043?ln=en&v=pdf)
-
-Katz, R. A., and M. C. Freeman. 2015. Evidence of population resistance to extreme low flows in a fluvial-dependent fish species. Canadian Journal of Fisheries and Aquatic Sciences 72:1776-1787. [link](https://cdnsciencepub.com/doi/abs/10.1139/cjfas-2015-0173)
-
-Katz R.A. and McKay S.K.  2011.  Evaluating effects of pump-storage water withdrawals using an individual-based metapopulation model of a benthic fish species.  2011 Georgia Water Resources Conference, Athens, Georgia. [pdf](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/6/3466/files/2023/06/4.6.4Katz.pdf)
-
-McDowell W.G.  2014.  Assessing the ecological role of the invasive clam Corbicula fluminea in southeastern rivers and nationwide.  Doctoral Dissertation.  University of Georgia. [pdf](https://openscholar.uga.edu/record/19480?ln=en&v=pdf)
- 
-McKay S.K.  2014.  Informing flow management decisions in the Middle Oconee River.  Doctoral Dissertation.  Odum School of Ecology, University of Georgia, Athens, Georgia. [pdf](https://openscholar.uga.edu/record/19572?ln=en&v=pdf)
-
-McKay, S. K. (2015). Quantifying Tradeoffs Associated with Hydrologic Environmental Flow Methods. Journal of the American Water Resources Association, 51(6), 1508–1518. [pdf](https://skmckay.github.io/publications/McKay%20-%202015%20-%20JAWRA%20-%20MIDO%20Hydrology.pdf)
-
-McKay, S. K., Freeman, M. C., & Covich, A. P. (2016). Application of Effective Discharge Analysis to Environmental Flow Decision-Making. Environmental Management, 57(6), 1153–1165. https://doi.org/10.1007/s00267-016-0684-4. [pdf](https://skmckay.github.io/publications/McKay%20et%20al.%20-%202016%20-%20Qeff%20Fish%20-%20EnvMan.pdf)
-
-McKay S.K. and Rasmussen T.C.  2013.  Declaring  drought for effective water management.  2013 Georgia Water Resources Conference, Athens, Georgia.  4 pp. [pdf](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/6/3466/files/2023/06/2.4.1_McKay.pdf)  
-
-Merril M.D.  2001.  Local and watershed influences on stream fish biotic integrity in the upper Oconee watershed, Georgia, USA.  Master’s Thesis.  University of Georgia. [pdf](https://openscholar.uga.edu/record/18861?ln=en&v=pdf)
-
-Nelson D.J.  1957.  The standing crop and productivity of a rock outcrop in the Middle Oconee River, Georgia.  Doctoral Dissertation.  University of Georgia. [pdf](Nelson-1957.pdf)
-
-Nelson D.J. and Scott D.C.  1962.  Role of detritus in the productivity of a rock-outcrop community in a Piedmont stream.  Limnology and Oceanography, 7, 396-413. [pdf](https://aslopubs.onlinelibrary.wiley.com/doi/pdf/10.4319/lo.1962.7.3.0396)
-
-Pahl J.P.  2009.  Effects of flow alteration on the aquatic macrophyte Podostemum ceratophyllum (riverweed): Local recovery potential and regional monitoring strategy.  Master’s Thesis.  University of Georgia. [pdf](https://openscholar.uga.edu/record/17775?ln=en&v=pdf)
-
-Rack L.  2024.  Evaluating low streamflow effects on biota to support management in perennial systems.  Doctoral Dissertation.  University of Georgia. [pdf](https://openscholar.uga.edu/record/5575?ln=en&v=pdf)
-
-Ruhiman, M.B. and Nutter, W.L., 1999. Channel morphology evolution and overbank flow in the Georgia Piedmont. JAWRA Journal of the American Water Resources Association, 35(2), pp.277-290. [link](https://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.1999.tb03589.x)
-
-Shrestha S., Dwivedi P., McKay S.K., and Radcliffe D. 2019. Assessing the potential impact of rising production of industrial wood pellets on streamflow in the presence of projected changes in land use and climate: A case study from the Oconee River Basin in Georgia, United States. Water, 11(1), 142; https://doi.org/10.3390/w11010142. [pdf](https://www.mdpi.com/2073-4441/11/1/142)
-
-Upper Oconee Basin Water Authority (UOBWA). 2005. Drought contingency plan. www.bearcreekwtp.com. [pdf](http://www.bearcreekwtp.com/images/drought_contingency_plan.pdf)
-
-Upper Oconee Basin Water Authority (UOBWA). 2014. Reservoir management plan.  www.bearcreekwtp.com. [pdf](http://www.bearcreekwtp.com/pdf/Reservoir-Management-Plan-2014.pdf)
-
-Ward, R.W., 2002. Extent and dispersal rates of Chinese privet (Ligustrum sinense) invasion on the upper Oconee River floodplain, North Georgia. Southeastern Geographer, 42(1), pp.29-48. [link](https://www.jstor.org/stable/44371127)
-
-Wood J.L.  2017.  Using multiple lenses to investigate trophic interactions and responses to ecological stressors in lotic ecosystems.  Doctoral Dissertation.  University of Georgia. [pdf](https://openscholar.uga.edu/record/7630?ln=en&v=pdf)
-
-Wood, J., Pattillo, M. and Freeman, M., 2016. Organic-matter retention and macroinvertebrate utilization of seasonally inundated bryophytes in a mid-order piedmont river. Southeastern Naturalist, 15(3), pp.403-414. [link](https://bioone.org/journals/southeastern-naturalist/volume-15/issue-3/058.015.0303/Organic-Matter-Retention-and-Macroinvertebrate-Utilization-of-Seasonally-Inundated-Bryophytes/10.1656/058.015.0303.short)
-
-Wood, J.L., Skaggs, J.W., Conn, C. and Freeman, M.C., 2019. Water velocity regulates macro‐consumer herbivory on the benthic macrophyte Podostemum ceratophyllum Michx. Freshwater Biology, 64(11), pp.2037-2045. [link](https://onlinelibrary.wiley.com/doi/abs/10.1111/fwb.13393)
+Transparency and 
 
 
-# **Data Sets**
+# **Abstract**
 
-Conn C., Bumpers P., Rosemond A., McKay S.K., Wenger S., and Freeman M. 2024. Antecedent flow conditions drive patterns of primary producer biomass in a mid-sized temperate river. Zenodo. https://zenodo.org/records/16422070. 
+Transparency and 
 
-Dietterich L. and Hallmark M. 2023. Known and prospective rocky shoal locations in three rivers in Georgia, USA. Data Dryad. [link](https://datadryad.org/dataset/doi:10.5061/dryad.nk98sf7z0)
+
+# **Abstract**
+
+Transparency and 
+
+
+# **References Cited**
+
+Grant W.E. and Swannack T.M. 2008. Ecological modeling: A common-sense approach to theory and practice. Malden, MA: Blackwell Publishing.
+
+Fischenich, C. 2008. The application of conceptual models to ecosystem restoration. ERDC TN-EBA-TN-08-1. U.S. Army Engineer Research and Development Center, Vicksburg, MS.
+
+Hampton, S.E., Anderson, S.S., Bagby, S.C., Gries, C., Han, X., Hart, E.M., Jones, M.B., Lenhardt, W.C., MacDonald, A., Michener, W.K. and Mudge, J., 2015. The Tao of open science for ecology. Ecosphere, 6(7), pp.1-13.
+
+Herman BD, McKay SK, Altman S, Richards NS, Reif M, Piercy CD and Swannack TM (2019) Unpacking the Black Box: Demystifying Ecological Models Through Interactive Workshops and Hands-On Learning. Front. Environ. Sci. 7:122. Doi: 10.3389/fenvs.2019.00122
+
+Langsdale, Stacy, Allyson Beall, Elizabeth Bourget, Erik Hagen, Scott Kudlas, Richard Palmer, Diane Tate, and William Werick, 2013. Collaborative Modeling for Decision Support in Water Resources: Principles and Best Practices. Journal of the American Water Resources Association (JAWRA) 49(3): 629-638. DOI: 10.1111/jawr.12065
+
+McKay S.K. 2019. Visualization as a tool for ecological analysis. Encyclopedia of Ecology, 2nd Ed., Volume 2, pp. 213-220.  Eds. S. Jorgensen and B. Fath.  Doi:10.1016/B978-0-12-409548-9.10566-4.
+
+McKay S.K., Richards N., and Swannack T.  2019.  Aligning ecological model development with restoration project planning.  ERDC EMRRP-SR-89.  U.S. Army Engineer Research and Development Center, Vicksburg, MS.
+
+McKay S.K., Richards N., and Swannack T.M. 2022. Ecological model development: Evaluation of system quality.  ERDC/TN EMRRP-EBA-26.  U.S. Army Engineer Research and Development Center, Vicksburg, MS.
+
+Michener, W.K., 2015. Ecological data sharing. Ecological informatics, 29, pp.33-44.
+
+Powers, S.M. and Hampton, S.E., 2019. Open science, reproducibility, and transparency in ecology. Ecological Applications, 29(1), p.e01822.
+
+Swannack, T. M., J. C. Fischenich, and D. J. Tazik. 2012. Ecological modeling guide for ecosystem restoration and management. ERDC/EL TR-12-18. Vicksburg, MS: US Army Engineer Research and Development Center.
+
+U.S. Army Corps of Engineers (USACE).  2011.  Assuring quality of planning models.  EC-1105-2-412. Washington, DC.
+
+Van den Belt, M. (2004). Mediated Modeling; A System Dynamics Approach to Environmental Consensus Building. Washington DC: Island Press.
+
+Voinov, A., and Bousquet, F. (2010). Modeling with stakeholders. Environmental Modeling and Software, 25, 1268–1281. Doi: 10.1016/j.envsoft.2010.03.007.
+
+Wickham H. and Bryan J. 2019. R packages: Organize, test, document, and share your code. https://r-pkgs.org/.
